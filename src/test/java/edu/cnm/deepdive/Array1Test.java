@@ -202,4 +202,28 @@ class Array1Test {
       assertEquals(expected, actual);
     }
   }
+
+  @Test
+  void sum2() {
+    int[][] sum2Params = {
+        {1, 2, 3},
+        {1, 1},
+        {1, 1, 1, 1},
+        {1, 2},
+        {1},
+        {},
+        {4, 5, 6},
+        {4}
+    };
+    int[] sum2Expected = {
+        3, 2, 2, 3, 1, 0, 9, 4
+    };
+    for (int i = 0; i < sum2Params.length; i++) {
+      String param = Arrays.toString(sum2Params[i]);
+      int expected = sum2Expected[i];
+      int actual = a1.sum2(sum2Params[i]);
+      System.out.printf("Param: %s; Expected: %d; Actual: %d%n", param, expected, actual);
+      assertEquals(expected, actual);
+    }
+  }
 }

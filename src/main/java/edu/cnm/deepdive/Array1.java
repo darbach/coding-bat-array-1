@@ -121,4 +121,25 @@ public class Array1 {
     Arrays.fill(result, Math.max(nums[0], nums[nums.length - 1]));
     return result;
   }
+
+  /**
+   * Given an array of ints, return the sum of the first 2 elements in the array. If the array
+   * length is less than 2, just sum up the elements that exist, returning 0 if the array is
+   * length 0.
+   *
+   * sum2([1, 2, 3]) → 3
+   * sum2([1, 1]) → 2
+   * sum2([1, 1, 1, 1]) → 2
+   * @param nums An array of ints
+   * @return Sum of first two elements
+   */
+  public int sum2(int[] nums) {
+    int sum = 0;
+    if (nums.length == 1) {
+      sum = nums[0];
+    } else if (nums.length > 1) {
+      sum = nums[0] + nums[1];
+    }
+    return sum;
+  }
 }
