@@ -37,4 +37,29 @@ class Array1Test {
       assertEquals(expected, actual);
     }
   }
+
+  @Test
+  void sameFirstLast() {
+    int[][] sameFirstLastParams = {
+        {1, 2, 3},
+        {1, 2, 3, 1},
+        {1, 2, 1},
+        {7},
+        {},
+        {1, 2, 3, 4, 5, 1},
+        {1, 2, 3, 4, 5, 13},
+        {13, 2, 3, 4, 5, 13},
+        {7, 7}
+    };
+    boolean[] sameFirstLastExpected = {
+      false, true, true, true, false, true, false, true, true
+    };
+    for (int i = 0; i < sameFirstLastParams.length; i++) {
+      String param = Arrays.toString(sameFirstLastParams[i]);
+      boolean expected = sameFirstLastExpected[i];
+      boolean actual = a1.sameFirstLast(sameFirstLastParams[i]);
+      System.out.printf("Param: %s; Expected: %s; Actual: %s%n", param, expected, actual);
+      assertEquals(expected, actual);
+    }
+  }
 }
