@@ -118,11 +118,6 @@ class Array1Test {
 
   @Test
   void rotateLeft3() {
-//    rotateLeft3([1, 2, 3]) → [2, 3, 1]	[2, 3, 1]	OK
-//    rotateLeft3([5, 11, 9]) → [11, 9, 5]	[11, 9, 5]	OK
-//    rotateLeft3([7, 0, 0]) → [0, 0, 7]	[0, 0, 7]	OK
-//    rotateLeft3([1, 2, 1]) → [2, 1, 1]	[2, 1, 1]	OK
-//    rotateLeft3([0, 0, 1]) → [0, 1, 0]	[0, 1, 0]	OK
     int[][] rotateLeft3Params = {
         {1, 2, 3},
         {5, 11, 9},
@@ -172,6 +167,37 @@ class Array1Test {
       String param = Arrays.toString(reverse3Params[i]);
       String expected = Arrays.toString(reverse3Expected[i]);
       String actual = Arrays.toString(a1.reverse3(reverse3Params[i]));
+      System.out.printf("Param: %s; Expected: %s; Actual: %s%n", param, expected, actual);
+      assertEquals(expected, actual);
+    }
+  }
+
+  @Test
+  void maxEnd3() {
+    int[][] maxEnd3Params = {
+        {1, 2, 3},
+        {11, 5, 9},
+        {2, 11, 3},
+        {11, 3, 3},
+        {3, 11, 11},
+        {2, 2, 2},
+        {2, 11, 2},
+        {0, 0, 1}
+    };
+    int[][] maxEnd3Expected = {
+        {3, 3, 3},
+        {11, 11, 11},
+        {3, 3, 3},
+        {11, 11, 11},
+        {11, 11, 11},
+        {2, 2, 2},
+        {2, 2, 2},
+        {1, 1, 1}
+    };
+    for (int i = 0; i < maxEnd3Params.length; i++) {
+      String param = Arrays.toString(maxEnd3Params[i]);
+      String expected = Arrays.toString(maxEnd3Expected[i]);
+      String actual = Arrays.toString(a1.maxEnd3(maxEnd3Params[i]));
       System.out.printf("Param: %s; Expected: %s; Actual: %s%n", param, expected, actual);
       assertEquals(expected, actual);
     }
