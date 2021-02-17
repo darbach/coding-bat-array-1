@@ -115,4 +115,34 @@ class Array1Test {
       assertEquals(expected, actual);
     }
   }
+
+  @Test
+  void rotateLeft3() {
+//    rotateLeft3([1, 2, 3]) → [2, 3, 1]	[2, 3, 1]	OK
+//    rotateLeft3([5, 11, 9]) → [11, 9, 5]	[11, 9, 5]	OK
+//    rotateLeft3([7, 0, 0]) → [0, 0, 7]	[0, 0, 7]	OK
+//    rotateLeft3([1, 2, 1]) → [2, 1, 1]	[2, 1, 1]	OK
+//    rotateLeft3([0, 0, 1]) → [0, 1, 0]	[0, 1, 0]	OK
+    int[][] rotateLeft3Params = {
+        {1, 2, 3},
+        {5, 11, 9},
+        {7, 0, 0},
+        {1, 2, 1},
+        {0, 0, 1}
+    };
+    int[][] rotateLeft3Expected = {
+        {2, 3, 1},
+        {11, 9, 5},
+        {0, 0, 7},
+        {2, 1, 1},
+        {0, 1, 0}
+    };
+    for (int i = 0; i < rotateLeft3Params.length; i++) {
+      String param = Arrays.toString(rotateLeft3Params[i]);
+      String expected = Arrays.toString(rotateLeft3Expected[i]);
+      String actual = Arrays.toString(a1.rotateLeft3(rotateLeft3Params[i]));
+      System.out.printf("Param: %s; Expected: %s; Actual: %s%n", param, expected, actual);
+      assertEquals(expected, actual);
+    }
+  }
 }

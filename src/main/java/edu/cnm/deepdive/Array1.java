@@ -75,4 +75,14 @@ public class Array1 {
     }
     return sum;
   }
+
+  public int[] rotateLeft3(int[] nums) {
+    int[] result = new int[nums.length];
+    int numOfShifts = 2;
+    for (int i = 0; i < nums.length; i++) {
+      int newPosition = (i + numOfShifts) % nums.length;
+      result[newPosition] = nums[i];
+    }
+    return result;
+  }
 }
