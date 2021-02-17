@@ -226,4 +226,31 @@ class Array1Test {
       assertEquals(expected, actual);
     }
   }
+
+  @Test
+  void middleWay() {
+    int[][][] middleWayParams = {
+        {{1, 2, 3}, {4, 5, 6}},
+        {{7, 7, 7}, {3, 8, 0}},
+        {{5, 2, 9}, {1, 4, 5}},
+        {{1, 9, 7}, {4, 8, 8}},
+        {{1, 2, 3}, {3, 1, 4}},
+        {{1, 2, 3}, {4, 1, 1}}
+    };
+    int[][] middleWayExpected = {
+        {2, 5},
+        {7, 8},
+        {2, 4},
+        {9, 8},
+        {2, 1},
+        {2, 1}
+    };
+    for (int i = 0; i < middleWayParams.length; i++) {
+      String param = Arrays.toString(middleWayParams[i][0]) + ", " + Arrays.toString(middleWayParams[i][1]);
+      String expected = Arrays.toString(middleWayExpected[i]);
+      String actual = Arrays.toString(a1.middleWay(middleWayParams[i][0], middleWayParams[i][1]));
+      System.out.printf("Param: %s; Expected: %s; Actual: %s%n", param, expected, actual);
+      assertEquals(expected, actual);
+    }
+  }
 }
