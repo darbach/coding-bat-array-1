@@ -246,9 +246,41 @@ class Array1Test {
         {2, 1}
     };
     for (int i = 0; i < middleWayParams.length; i++) {
-      String param = Arrays.toString(middleWayParams[i][0]) + ", " + Arrays.toString(middleWayParams[i][1]);
+      String param =
+          Arrays.toString(middleWayParams[i][0]) + ", " + Arrays.toString(middleWayParams[i][1]);
       String expected = Arrays.toString(middleWayExpected[i]);
       String actual = Arrays.toString(a1.middleWay(middleWayParams[i][0], middleWayParams[i][1]));
+      System.out.printf("Param: %s; Expected: %s; Actual: %s%n", param, expected, actual);
+      assertEquals(expected, actual);
+    }
+  }
+
+  @Test
+  void makeEnds() {
+    int[][] makeEndsParams = {
+        {1, 2, 3},
+        {1, 2, 3, 4},
+        {7, 4, 6, 2},
+        {1, 2, 2, 2, 2, 2, 2, 3},
+        {7, 4},
+        {7},
+        {5, 2, 9},
+        {2, 3, 4, 1},
+    };
+    int[][] makeEndsExpected = {
+        {1, 3},
+        {1, 4},
+        {7, 2},
+        {1, 3},
+        {7, 4},
+        {7, 7},
+        {5, 9},
+        {2, 1}
+    };
+    for (int i = 0; i < makeEndsParams.length; i++) {
+      String param = Arrays.toString(makeEndsParams[i]);
+      String expected = Arrays.toString(makeEndsExpected[i]);
+      String actual = Arrays.toString(a1.makeEnds(makeEndsParams[i]));
       System.out.printf("Param: %s; Expected: %s; Actual: %s%n", param, expected, actual);
       assertEquals(expected, actual);
     }
