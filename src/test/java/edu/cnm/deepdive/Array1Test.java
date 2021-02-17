@@ -52,7 +52,7 @@ class Array1Test {
         {7, 7}
     };
     boolean[] sameFirstLastExpected = {
-      false, true, true, true, false, true, false, true, true
+        false, true, true, true, false, true, false, true, true
     };
     for (int i = 0; i < sameFirstLastParams.length; i++) {
       String param = Arrays.toString(sameFirstLastParams[i]);
@@ -62,4 +62,36 @@ class Array1Test {
       assertEquals(expected, actual);
     }
   }
+
+  @Test
+  void makePi() {
+    String expected = Arrays.toString(new int[]{3, 1, 4});
+    String actual = Arrays.toString(a1.makePi());
+    System.out
+        .printf("Expected: %s; Actual: %s%n", expected, actual);
+    assertEquals(expected, actual);
+  }
+
+  @Test
+  void commonEnd() {
+    int[][][] commonEndParams = {
+      {{1, 2, 3}, {7, 3}},
+      {{1, 2, 3}, {7, 3, 2}},
+      {{1, 2, 3}, {1, 3}},
+      {{1, 2, 3}, {1}},
+      {{1, 2, 3}, {2}}
+      };
+    boolean[] commonEndExpected = {
+        true, false, true, true, false
+    };
+    for (int i = 0; i < commonEndParams.length; i++) {
+      String param = Arrays.toString(commonEndParams[i][0]) + ", "
+          + Arrays.toString(commonEndParams[i][1]);
+      boolean expected = commonEndExpected[i];
+      boolean actual = a1.commonEnd(commonEndParams[i][0], commonEndParams[i][1]);
+      System.out.printf("Params: %s; Expected: %s; Actual: %s%n", param, expected, actual);
+      assertEquals(expected, actual);
+    }
+  }
+
 }
