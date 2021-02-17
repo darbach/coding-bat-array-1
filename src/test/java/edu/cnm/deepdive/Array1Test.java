@@ -75,12 +75,12 @@ class Array1Test {
   @Test
   void commonEnd() {
     int[][][] commonEndParams = {
-      {{1, 2, 3}, {7, 3}},
-      {{1, 2, 3}, {7, 3, 2}},
-      {{1, 2, 3}, {1, 3}},
-      {{1, 2, 3}, {1}},
-      {{1, 2, 3}, {2}}
-      };
+        {{1, 2, 3}, {7, 3}},
+        {{1, 2, 3}, {7, 3, 2}},
+        {{1, 2, 3}, {1, 3}},
+        {{1, 2, 3}, {1}},
+        {{1, 2, 3}, {2}}
+    };
     boolean[] commonEndExpected = {
         true, false, true, true, false
     };
@@ -94,4 +94,25 @@ class Array1Test {
     }
   }
 
+  @Test
+  void sum3() {
+    int[][] sum3Params = {
+        {1, 2, 3},
+        {5, 11, 2},
+        {7, 0, 0},
+        {1, 2, 1},
+        {1, 1, 1},
+        {2, 7, 2}
+    };
+    int[] sum3Expected = {
+        6, 18, 7, 4, 3, 11
+    };
+    for (int i = 0; i < sum3Params.length; i++) {
+      String param = Arrays.toString(sum3Params[i]);
+      int expected = sum3Expected[i];
+      int actual = a1.sum3(sum3Params[i]);
+      System.out.printf("Params: %s; Expected: %d; Actual: %d%n", param, expected, actual);
+      assertEquals(expected, actual);
+    }
+  }
 }

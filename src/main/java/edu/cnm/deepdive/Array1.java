@@ -58,4 +58,21 @@ public class Array1 {
   public boolean commonEnd(int[] a, int[] b) {
     return (a[0] == b[0]) || (a[a.length - 1] == b[b.length - 1]);
   }
+
+  /**
+   * Given an array of ints length 3, return the sum of all the elements.
+   *
+   * sum3([1, 2, 3]) → 6
+   * sum3([5, 11, 2]) → 18
+   * sum3([7, 0, 0]) → 7
+   * @param nums an array of 3 ints
+   * @return sum of the ints
+   */
+  public int sum3(int[] nums) {
+    int sum = 0;
+    for (int num: nums) {
+      sum += num;
+    }
+    return sum;
+  }
 }
