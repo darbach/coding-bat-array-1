@@ -145,4 +145,35 @@ class Array1Test {
       assertEquals(expected, actual);
     }
   }
+
+  @Test
+  void reverse3() {
+    int[][] reverse3Params = {
+        {1, 2, 3},
+        {5, 11, 9},
+        {7, 0, 0},
+        {2, 1, 2},
+        {1, 2, 1},
+        {2, 11, 3},
+        {0, 6, 5},
+        {7, 2, 3}
+    };
+    int[][] reverse3Expected = {
+        {3, 2, 1},
+        {9, 11, 5},
+        {0, 0, 7},
+        {2, 1, 2},
+        {1, 2, 1},
+        {3, 11, 2},
+        {5, 6, 0},
+        {3, 2, 7}
+    };
+    for (int i = 0; i < reverse3Params.length; i++) {
+      String param = Arrays.toString(reverse3Params[i]);
+      String expected = Arrays.toString(reverse3Expected[i]);
+      String actual = Arrays.toString(a1.reverse3(reverse3Params[i]));
+      System.out.printf("Param: %s; Expected: %s; Actual: %s%n", param, expected, actual);
+      assertEquals(expected, actual);
+    }
+  }
 }
