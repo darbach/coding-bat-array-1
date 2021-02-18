@@ -1,6 +1,9 @@
 package edu.cnm.deepdive;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class Array1 {
 
@@ -11,6 +14,7 @@ public class Array1 {
    * firstLast6([1, 2, 6]) → true
    * firstLast6([6, 1, 2, 3]) → true
    * firstLast6([13, 6, 1, 2, 3]) → false
+   *
    * @param nums An int[]
    * @return boolean whether 6 appears as first or last elements
    */
@@ -30,6 +34,7 @@ public class Array1 {
    * sameFirstLast([1, 2, 3]) → false
    * sameFirstLast([1, 2, 3, 1]) → true
    * sameFirstLast([1, 2, 1]) → true
+   *
    * @param nums An int[]
    * @return boolean whether first and last elements are the same
    */
@@ -53,6 +58,7 @@ public class Array1 {
    * commonEnd([1, 2, 3], [7, 3]) → true
    * commonEnd([1, 2, 3], [7, 3, 2]) → false
    * commonEnd([1, 2, 3], [1, 3]) → true
+   *
    * @param a An int array
    * @param b An int array
    * @return boolean whether they have same first or last elements
@@ -67,6 +73,7 @@ public class Array1 {
    * sum3([1, 2, 3]) → 6
    * sum3([5, 11, 2]) → 18
    * sum3([7, 0, 0]) → 7
+   *
    * @param nums an array of 3 ints
    * @return sum of the ints
    */
@@ -94,6 +101,7 @@ public class Array1 {
    * reverse3([1, 2, 3]) → [3, 2, 1]
    * reverse3([5, 11, 9]) → [9, 11, 5]
    * reverse3([7, 0, 0]) → [0, 0, 7]
+   *
    * @param nums an array of 3 ints
    * @return reversed input
    */
@@ -113,6 +121,7 @@ public class Array1 {
    * maxEnd3([1, 2, 3]) → [3, 3, 3]
    * maxEnd3([11, 5, 9]) → [11, 11, 11]
    * maxEnd3([2, 11, 3]) → [3, 3, 3]
+   *
    * @param nums An array of 3 ints.
    * @return An array filled with the larger value of the first or last element from the input.
    */
@@ -130,6 +139,7 @@ public class Array1 {
    * sum2([1, 2, 3]) → 3
    * sum2([1, 1]) → 2
    * sum2([1, 1, 1, 1]) → 2
+   *
    * @param nums An array of ints
    * @return Sum of first two elements
    */
@@ -165,10 +175,28 @@ public class Array1 {
    * makeEnds([1, 2, 3]) → [1, 3]
    * makeEnds([1, 2, 3, 4]) → [1, 4]
    * makeEnds([7, 4, 6, 2]) → [7, 2]
+   *
    * @param nums An array of length 1 or greater
    * @return A length 2 array with the first and last values from the input
    */
   public int[] makeEnds(int[] nums) {
     return new int[] {nums[0], nums[nums.length-1]};
+  }
+
+  /**
+   * Given an int array length 2, return true if it contains a 2 or a 3.
+   *
+   * has23([2, 5]) → true
+   * has23([4, 3]) → true
+   * has23([4, 5]) → false
+   *
+   * @param nums An int array of length 2
+   * @return Boolean whether the input contains a 2 or 3
+   */
+  public boolean has23(int[] nums) {
+    return nums[0] == 2
+        || nums[0] == 3
+        || nums[1] == 2
+        || nums[1] == 3;
   }
 }

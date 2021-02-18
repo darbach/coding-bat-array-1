@@ -285,4 +285,37 @@ class Array1Test {
       assertEquals(expected, actual);
     }
   }
+
+  @Test
+  void has23() {
+    int[][] has23Params = {
+        {2, 5},
+        {4, 3},
+        {4, 5},
+        {2, 2},
+        {3, 2},
+        {3, 3},
+        {7, 7},
+        {3, 9},
+        {9, 5}
+    };
+    boolean[] has23Expected = {
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false
+    };
+    for (int i = 0; i < has23Params.length; i++) {
+      String param = Arrays.toString(has23Params[i]);
+      boolean expected = has23Expected[i];
+      boolean actual = a1.has23(has23Params[i]);
+      System.out.printf("Param: %s; Expected: %s; Actual: %s%n", param, expected, actual);
+      assertEquals(expected, actual);
+    }
+  }
 }
