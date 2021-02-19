@@ -29,6 +29,7 @@ class Array1Test {
     boolean[] firstLast6Expected = {
         true, true, false, true, false, false, true, true, false, true, false, true, false
     };
+    System.out.println("Running firstLast6() test...");
     for (int i = 0; i < firstLast6Params.length; i++) {
       String param = Arrays.toString(firstLast6Params[i]);
       boolean expected = firstLast6Expected[i];
@@ -54,6 +55,7 @@ class Array1Test {
     boolean[] sameFirstLastExpected = {
         false, true, true, true, false, true, false, true, true
     };
+    System.out.println("Running sameFirstLast() test...");
     for (int i = 0; i < sameFirstLastParams.length; i++) {
       String param = Arrays.toString(sameFirstLastParams[i]);
       boolean expected = sameFirstLastExpected[i];
@@ -67,6 +69,7 @@ class Array1Test {
   void makePi() {
     String expected = Arrays.toString(new int[]{3, 1, 4});
     String actual = Arrays.toString(a1.makePi());
+    System.out.println("Running makePi() test...");
     System.out
         .printf("Expected: %s; Actual: %s%n", expected, actual);
     assertEquals(expected, actual);
@@ -84,6 +87,7 @@ class Array1Test {
     boolean[] commonEndExpected = {
         true, false, true, true, false
     };
+    System.out.println("Running commonEnd() test...");
     for (int i = 0; i < commonEndParams.length; i++) {
       String param = Arrays.toString(commonEndParams[i][0]) + ", "
           + Arrays.toString(commonEndParams[i][1]);
@@ -107,6 +111,7 @@ class Array1Test {
     int[] sum3Expected = {
         6, 18, 7, 4, 3, 11
     };
+    System.out.println("Running sum3() test...");
     for (int i = 0; i < sum3Params.length; i++) {
       String param = Arrays.toString(sum3Params[i]);
       int expected = sum3Expected[i];
@@ -132,6 +137,7 @@ class Array1Test {
         {2, 1, 1},
         {0, 1, 0}
     };
+    System.out.println("Running rotateLeft3() test...");
     for (int i = 0; i < rotateLeft3Params.length; i++) {
       String param = Arrays.toString(rotateLeft3Params[i]);
       String expected = Arrays.toString(rotateLeft3Expected[i]);
@@ -163,6 +169,7 @@ class Array1Test {
         {5, 6, 0},
         {3, 2, 7}
     };
+    System.out.println("Running reverse3() test...");
     for (int i = 0; i < reverse3Params.length; i++) {
       String param = Arrays.toString(reverse3Params[i]);
       String expected = Arrays.toString(reverse3Expected[i]);
@@ -194,6 +201,7 @@ class Array1Test {
         {2, 2, 2},
         {1, 1, 1}
     };
+    System.out.println("Running maxEnd3() test...");
     for (int i = 0; i < maxEnd3Params.length; i++) {
       String param = Arrays.toString(maxEnd3Params[i]);
       String expected = Arrays.toString(maxEnd3Expected[i]);
@@ -218,6 +226,7 @@ class Array1Test {
     int[] sum2Expected = {
         3, 2, 2, 3, 1, 0, 9, 4
     };
+    System.out.println("Running sum2() test...");
     for (int i = 0; i < sum2Params.length; i++) {
       String param = Arrays.toString(sum2Params[i]);
       int expected = sum2Expected[i];
@@ -245,6 +254,7 @@ class Array1Test {
         {2, 1},
         {2, 1}
     };
+    System.out.println("Running middleWay() test...");
     for (int i = 0; i < middleWayParams.length; i++) {
       String param =
           Arrays.toString(middleWayParams[i][0]) + ", " + Arrays.toString(middleWayParams[i][1]);
@@ -277,6 +287,7 @@ class Array1Test {
         {5, 9},
         {2, 1}
     };
+    System.out.println("Running MakeEnds() test...");
     for (int i = 0; i < makeEndsParams.length; i++) {
       String param = Arrays.toString(makeEndsParams[i]);
       String expected = Arrays.toString(makeEndsExpected[i]);
@@ -310,10 +321,83 @@ class Array1Test {
         true,
         false
     };
+    System.out.println("Running has23() test...");
     for (int i = 0; i < has23Params.length; i++) {
       String param = Arrays.toString(has23Params[i]);
       boolean expected = has23Expected[i];
       boolean actual = a1.has23(has23Params[i]);
+      System.out.printf("Param: %s; Expected: %s; Actual: %s%n", param, expected, actual);
+      assertEquals(expected, actual);
+    }
+  }
+
+  @Test
+  void no23() {
+    int[][] no23Params = {
+        {4, 5},
+        {4, 2},
+        {3, 5},
+        {1, 9},
+        {2, 9},
+        {1, 3},
+        {1, 1},
+        {2, 2},
+        {3, 3},
+        {7, 8},
+        {8, 7}
+    };
+    boolean[] no23Expected = {
+        true,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        true
+    };
+    System.out.println("Running no23() test...");
+    for (int i = 0; i < no23Params.length; i++) {
+      String param = Arrays.toString(no23Params[i]);
+      boolean expected = no23Expected[i];
+      boolean actual = a1.no23(no23Params[i]);
+      System.out.printf("Param: %s; Expected: %s; Actual: %s%n", param, expected, actual);
+      assertEquals(expected, actual);
+    }
+  }
+
+  @Test
+  void makeLast() {
+    int[][] makeLastParams = {
+        {4, 5, 6},
+        {1, 2},
+        {3},
+        {0},
+        {7, 7, 7},
+        {3, 1, 4},
+        {1, 2, 3, 4},
+        {1, 2, 3, 0},
+        {2, 4},
+    };
+    int[][] makeLastExpected = {
+        {0, 0, 0, 0, 0, 6},
+        {0, 0, 0, 2},
+        {0, 3},
+        {0, 0},
+        {0, 0, 0, 0, 0, 7},
+        {0, 0, 0, 0, 0, 4},
+        {0, 0, 0, 0, 0, 0, 0, 4},
+        {0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 4}
+    };
+    System.out.println("Running MakeLast() test...");
+    for (int i = 0; i < makeLastParams.length; i++) {
+      String param = Arrays.toString(makeLastParams[i]);
+      String expected = Arrays.toString(makeLastExpected[i]);
+      String actual = Arrays.toString(a1.makeLast(makeLastParams[i]));
       System.out.printf("Param: %s; Expected: %s; Actual: %s%n", param, expected, actual);
       assertEquals(expected, actual);
     }
