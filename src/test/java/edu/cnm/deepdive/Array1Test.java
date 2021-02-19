@@ -402,4 +402,38 @@ class Array1Test {
       assertEquals(expected, actual);
     }
   }
+
+  @Test
+  void double23() {
+    int[][] double23Params = {
+        {2, 2},
+        {3, 3},
+        {2, 3},
+        {3, 2},
+        {4, 5},
+        {2},
+        {3},
+        {},
+        {3, 4}
+    };
+    boolean[] double23Expected = {
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    };
+    System.out.println("Running double23() test...");
+    for (int i = 0; i < double23Params.length; i++) {
+      String param = Arrays.toString(double23Params[i]);
+      boolean expected = double23Expected[i];
+      boolean actual = a1.double23(double23Params[i]);
+      System.out.printf("Param: %s; Expected: %s; Actual: %s%n", param, expected, actual);
+      assertEquals(expected, actual);
+    }
+  }
 }
